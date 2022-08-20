@@ -70,3 +70,14 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'factory_bot_rails'
+end
+
+gem 'rails-i18n'
+gem 'pry-rails'
+
+gem 'jquery-rails' 
+gem 'jquery-ui-rails'
