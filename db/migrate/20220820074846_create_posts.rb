@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.string :title
       t.date :start_date
       t.date :end_date
-      t.boolean :all_date
+      
       t.text :text
 
       t.timestamps
