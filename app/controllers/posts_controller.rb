@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  protect_from_forgery
   
   def index
     @posts = Post.all.order(created_at: :asc)
@@ -15,7 +14,7 @@ class PostsController < ApplicationController
       title: params[:title],
       start_date: params[:start_date],
       end_date: params[:end_date],
-      all_day: params[:all_day],
+      all_day: params[:whole_day],
       updated_at: params[:updated_at],
       text: params[:text]
     )
@@ -40,7 +39,7 @@ class PostsController < ApplicationController
     @post.title = params[:title]
     @post.start_date = params[:start_date]
     @post.end_date = params[:end_date]
-    @post.all_day = params[:all_day]
+    @post.all_day = params[:whole_day]
     @post.text = params[:text]
     if @post.save
       flash[:notice] = "スケジュールを更新しました"
