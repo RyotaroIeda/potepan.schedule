@@ -48,10 +48,13 @@ th {
 table {
 	text-align: center;
 }
-.input_form {
+input[type="text"]  {
 	width: 95%;
 }
-.text_form {
+input[type="date"] {
+	width: 95%;
+}
+textarea {
 	width: 95%;
 	height: 200px;
 }
