@@ -16,7 +16,13 @@
             </tr>
             <tr>
                 <td>終日</td>
-                <td><%= @post.whole_day %></td>
+                <td>
+                <% if @post.whole_day == true %>
+                <%= "○" %>
+                <% elsif @post.whole_day == false %>
+                <%= "" %>
+                <% end %>
+                </td>
             </tr>
             <tr>
                 <td>スケジュールメモ</td>
@@ -27,7 +33,7 @@
 </div>
 
 <div class="links">
-    <%= link_to("スケジュール一覧に戻る", "/") %><br>
-    <%= link_to("スケジュールを編集する", "/posts/#{@post.id}/edit") %><br>
-    <%= button_to("スケジュールを削除", "/posts/#{@post.id}/destroy") %>
+    <%= link_to "スケジュール一覧に戻る", :posts %><br>
+    <%= link_to "スケジュールを編集する", :edit_post %><br>
+    <%= button_to "スケジュールを削除する", @post, method: :delete %>
 </div>

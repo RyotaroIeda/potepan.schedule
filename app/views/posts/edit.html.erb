@@ -8,28 +8,28 @@
         </div>
     <% end %>
     
-    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <%= form_with model: @post do |f| %>
     <table>
         <tbody>
             <tr>
                 <td>タイトル</td>
-                <td><input class="input_form" name="title" value="<%= @post.title %>"></td>
+                <td><%= f.text_field :title %></td>
             </tr>
             <tr>
                 <td>開始日</td>
-                <td><input class="input_form" name="start_date" type="date" / value="<%= @post.start_date %>"></td>
+                <td><%= f.date_field :start_date %></td>
             </tr>
             <tr>
                 <td>終了日</td>
-                <td><input class="input_form" name="end_date" type="date" / value="<%= @post.end_date %>"></td>
+                <td><%= f.date_field :end_date %></td>
             </tr>
             <tr>
                 <td>終日</td>
-                <td><input name="whole_day" type="checkbox" value="<%= @post.whole_day %>"><br>終日の場合はチェックを入れます</td>
+                <td><%= f.check_box :whole_day, {}, true, false %><br>終日の場合はチェックを入れます</td>
             </tr>
             <tr>
                 <td>スケジュールメモ</td>
-                <td><textarea class="text_form" name="text"><%= @post.text %></textarea></td>
+                <td><%= f.text_area :text %></td>
             </tr>
         </tbody>
     </table>
